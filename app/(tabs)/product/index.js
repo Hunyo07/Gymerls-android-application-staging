@@ -66,7 +66,7 @@ const Tab5Index = () => {
   const userLogsOnPlaceOrder = (username) => {
     console.log(username);
     getIpAddress(function (ipAddress) {
-      fetch("https://gymerls-api-staging.vercel.app/api/insert-log", {
+      fetch("https://gymerls-api.vercel.app/api/insert-log", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -85,7 +85,7 @@ const Tab5Index = () => {
 
   const userLogdelcart = (event) => {
     getIpAddress(function (ipAddress) {
-      fetch("https://gymerls-api-staging.vercel.app/api/insert-log", {
+      fetch("https://gymerls-api.vercel.app/api/insert-log", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -129,7 +129,7 @@ const Tab5Index = () => {
 
   useEffect(() => {
     getDataPersonInfo(function (callback) {
-      fetch("https://gymerls-api-staging.vercel.app/api/get-user-by-username", {
+      fetch("https://gymerls-api.vercel.app/api/get-user-by-username", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -149,7 +149,7 @@ const Tab5Index = () => {
 
   useEffect(() => {
     getData(function (callback) {
-      fetch("https://gymerls-api-staging.vercel.app/api/get-cart-by-id", {
+      fetch("https://gymerls-api.vercel.app/api/get-cart-by-id", {
         method: "POST",
         headers: {
           "Content-type": " application/json",
@@ -208,7 +208,7 @@ const Tab5Index = () => {
   };
 
   const deleteCartItemAfterCheckout = (id) => {
-    fetch("https://gymerls-api-staging.vercel.app/api/delete-cart", {
+    fetch("https://gymerls-api.vercel.app/api/delete-cart", {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
@@ -242,7 +242,7 @@ const Tab5Index = () => {
     var replaceItem = newItem.replace(/"/g, " ");
     const transactionDate = formatDate(new Date());
 
-    fetch("https://gymerls-api-staging.vercel.app/api/transaction", {
+    fetch("https://gymerls-api.vercel.app/api/transaction", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -324,18 +324,15 @@ const Tab5Index = () => {
             <>
               {cart.map((item) => {
                 const removeInCart = (product_name) => {
-                  fetch(
-                    "https://gymerls-api-staging.vercel.app/api/delete-cart",
-                    {
-                      method: "PATCH",
-                      headers: {
-                        "Content-type": "application/json",
-                      },
-                      body: JSON.stringify({
-                        id: item.id,
-                      }),
-                    }
-                  )
+                  fetch("https://gymerls-api.vercel.app/api/delete-cart", {
+                    method: "PATCH",
+                    headers: {
+                      "Content-type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      id: item.id,
+                    }),
+                  })
                     .then(function (response) {
                       return response.json();
                     })

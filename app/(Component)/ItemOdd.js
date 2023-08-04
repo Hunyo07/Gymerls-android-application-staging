@@ -32,7 +32,7 @@
 //   useEffect(() => {
 //     storeDataUser();
 //     // GET METHOD
-//     fetch("https://gymerls-api-staging.vercel.app/api/products")
+//     fetch("https://gymerls-api.vercel.app/api/products")
 //       .then(function (response) {
 //         return response.json();
 //       })
@@ -44,7 +44,7 @@
 //   const addToCart = (product_name, image_url, description, price) => {
 //     const addedDate = formatDate(new Date());
 
-//     fetch("https://gymerls-api-staging.vercel.app/api/add-to-cart", {
+//     fetch("https://gymerls-api.vercel.app/api/add-to-cart", {
 //       method: "POST",
 //       headers: {
 //         "Content-type": "application/json",
@@ -208,7 +208,7 @@ const Item = () => {
 
   const userLog = (username, event) => {
     getIpAddress(function (ipAddress) {
-      fetch("https://gymerls-api-staging.vercel.app/api/insert-log", {
+      fetch("https://gymerls-api.vercel.app/api/insert-log", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -227,7 +227,7 @@ const Item = () => {
   useEffect(() => {
     storeDataUser();
     // GET METHOD
-    fetch("https://gymerls-api-staging.vercel.app/api/products")
+    fetch("https://gymerls-api.vercel.app/api/products")
       .then(function (response) {
         return response.json();
       })
@@ -239,7 +239,7 @@ const Item = () => {
   const addToCart = (product_name, image_url, description, price) => {
     const addedDate = formatDate(new Date());
 
-    fetch("https://gymerls-api-staging.vercel.app/api/add-to-cart", {
+    fetch("https://gymerls-api.vercel.app/api/add-to-cart", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

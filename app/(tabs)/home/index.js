@@ -9,6 +9,7 @@ import { ScrollView } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { Link } from "expo-router";
+
 const Tab1Index = () => {
   const router = useRouter();
   const [mealPlanning, setMealPlanning] = useState([]);
@@ -62,7 +63,7 @@ const Tab1Index = () => {
 
   useEffect(() => {
     getData(function (callback) {
-      fetch("https://gymerls-api-staging.vercel.app/api/meal-plan", {
+      fetch("https://gymerls-api.vercel.app/api/meal-plan", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -82,7 +83,7 @@ const Tab1Index = () => {
 
   useEffect(() => {
     getDataByEnd(function (callback) {
-      fetch("https://gymerls-api-staging.vercel.app/api/get-user-by-username", {
+      fetch("https://gymerls-api.vercel.app/api/get-user-by-username", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -93,6 +94,7 @@ const Tab1Index = () => {
       })
         .then((res) => res.json())
         .then((result) => {
+          greetingsFunction();
           membershipEndNotfi();
           getDaysDifference(result[0].mem_end_date);
         });
@@ -105,7 +107,7 @@ const Tab1Index = () => {
     const formattedDate = formatDate(new Date());
     getDataSchedules(function (callback) {
       fetch(
-        "https://gymerls-api-staging.vercel.app/api/get-reservation-by-username-and-date",
+        "https://gymerls-api.vercel.app/api/get-reservation-by-username-and-date",
         {
           method: "POST",
           headers: {
@@ -119,7 +121,6 @@ const Tab1Index = () => {
       )
         .then((res) => res.json())
         .then((result) => {
-          greetingsFunction();
           setNewReservationData(result);
           newReservationData.length !== 0
             ? setShowSchedToday(true)
@@ -162,7 +163,7 @@ const Tab1Index = () => {
   const [showAnnouncement, setShowAnnouncements] = useState(false);
   const [announcements, setAnnouncements] = useState([]);
   const getAnnouncement = () => {
-    fetch("https://gymerls-api-staging.vercel.app/api/get-all-announcement", {
+    fetch("https://gymerls-api.vercel.app/api/get-all-announcement", {
       method: "GET",
       headers: {
         "Content-type": "application/json",

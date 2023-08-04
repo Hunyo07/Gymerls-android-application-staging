@@ -21,7 +21,7 @@ const Tab4Index = () => {
       router.push("/(tabs)/meal/monday");
     }, 100);
     getData(function (callback) {
-      fetch("https://gymerls-api-staging.vercel.app/api/meal-plan", {
+      fetch("https://gymerls-api.vercel.app/api/meal-plan", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

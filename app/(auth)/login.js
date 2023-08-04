@@ -61,7 +61,7 @@ export default function LogIn() {
 
   const userLog = (username, event) => {
     getIpAddress(function (ipAddress) {
-      fetch("https://gymerls-api-staging.vercel.app/api/insert-log", {
+      fetch("https://gymerls-api.vercel.app/api/insert-log", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -80,7 +80,7 @@ export default function LogIn() {
 
   const loginUser = () => {
     // GET METHOD
-    // fetch('https://gymerls-api-staging.vercel.app/api/users')
+    // fetch('https://gymerls-api.vercel.app/api/users')
     // .then(function(response){
     //     return response.json();
     // })
@@ -92,7 +92,7 @@ export default function LogIn() {
 
     const usernameInput = username;
 
-    fetch("https://gymerls-api-staging.vercel.app/api/get-user", {
+    fetch("https://gymerls-api.vercel.app/api/get-user", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -125,7 +125,7 @@ export default function LogIn() {
   };
 
   useEffect(() => {
-    fetch("https://gymerls-api-staging.vercel.app/api/get-user", {
+    fetch("https://gymerls-api.vercel.app/api/get-user", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

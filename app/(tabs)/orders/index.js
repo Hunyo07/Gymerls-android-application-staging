@@ -47,18 +47,15 @@ const orders = () => {
   const setterFilterOptions = ["All", "Pending", "Completed"];
   useEffect(() => {
     storeDataPass(function (callback) {
-      fetch(
-        "https://gymerls-api-staging.vercel.app/api/get-transaction-by-username",
-        {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify({
-            username: callback,
-          }),
-        }
-      )
+      fetch("https://gymerls-api.vercel.app/api/get-transaction-by-username", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          username: callback,
+        }),
+      })
         .then((response) => response.json())
         .then((data) => {
           if (data.length == []) {

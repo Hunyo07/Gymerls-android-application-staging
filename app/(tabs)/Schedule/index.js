@@ -88,7 +88,7 @@ const index = () => {
     var formattedDate = formatDate(dateValue);
 
     getUserData(function (membership_type) {
-      fetch("https://gymerls-api-staging.vercel.app/api/get-user-by-username", {
+      fetch("https://gymerls-api.vercel.app/api/get-user-by-username", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -107,7 +107,7 @@ const index = () => {
 
     getData(function (callback) {
       fetch(
-        "https://gymerls-api-staging.vercel.app/api/get-reservation-by-username-and-date",
+        "https://gymerls-api.vercel.app/api/get-reservation-by-username-and-date",
         {
           method: "POST",
           headers: {
@@ -448,7 +448,6 @@ const index = () => {
                                 style={{
                                   alignSelf: "center",
                                   color: "#ffff",
-
                                   fontFamily: "EncodeSansSemiCondensed_700Bold",
                                   letterSpacing: 1,
                                 }}
@@ -481,7 +480,7 @@ const index = () => {
                   color: "grey",
                 }}
               >
-                Upgrade to premuim now!
+                Upgrade to premium now!
               </Text>
             </View>
           </>

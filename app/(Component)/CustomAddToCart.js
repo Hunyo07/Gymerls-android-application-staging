@@ -15,7 +15,7 @@ const CustomAddToCart = ({ text, onPress }) => {
 
   useEffect(() => {
     storeDataUser(function (callback) {
-      fetch("https://gymerls-api-staging.vercel.app/api/get-cart-by-id", {
+      fetch("https://gymerls-api.vercel.app/api/get-cart-by-id", {
         method: "POST",
         headers: {
           "Content-type": " application/json",

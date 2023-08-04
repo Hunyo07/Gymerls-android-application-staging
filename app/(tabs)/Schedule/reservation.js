@@ -72,7 +72,7 @@ const Scheduleindex = () => {
   };
   const userLogReservation = (username) => {
     getIpAddress(function (ipAddress) {
-      fetch("https://gymerls-api-staging.vercel.app/api/insert-log", {
+      fetch("https://gymerls-api.vercel.app/api/insert-log", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -94,7 +94,7 @@ const Scheduleindex = () => {
 
     getData(function (callback) {
       fetch(
-        "https://gymerls-api-staging.vercel.app/api/get-reservation-by-username-and-date",
+        "https://gymerls-api.vercel.app/api/get-reservation-by-username-and-date",
         {
           method: "POST",
           headers: {
@@ -136,7 +136,7 @@ const Scheduleindex = () => {
   };
 
   const createReservation = () => {
-    fetch("https://gymerls-api-staging.vercel.app/api/create-reservation", {
+    fetch("https://gymerls-api.vercel.app/api/create-reservation", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -162,7 +162,7 @@ const Scheduleindex = () => {
   const getReservationByDate = () => {
     var formattedDate = formatDate(inputDate);
     fetch(
-      "https://gymerls-api-staging.vercel.app/api/get-reservation-by-date-and-status-is-confirmed",
+      "https://gymerls-api.vercel.app/api/get-reservation-by-date-and-status-is-confirmed",
       {
         method: "POST",
         headers: {
